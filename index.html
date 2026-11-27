@@ -357,6 +357,14 @@ button{font:inherit;color:inherit;cursor:pointer}
 .v2 .dnote{margin:8px 14px 12px!important;font-size:12.5px;color:var(--mute)}
 @media (max-width:700px){.v2 .dk{grid-template-columns:1fr 1fr}.v2 .dlogo{width:100%}}
 
+@media (max-width:600px){
+ .v2 .meta3{grid-template-columns:1fr;row-gap:12px}
+ .rmr{grid-template-columns:128px minmax(0,1fr);height:auto;min-height:22px;padding:2px 0}
+ .rmr>span{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.2;font-size:12px}
+ .rmgh{height:auto;min-height:24px}
+ .v2 .dt th:nth-child(4),.v2 .dt td:nth-child(4),.v2 .dt th:nth-child(5),.v2 .dt td:nth-child(5){display:none}
+}
+
 .chd h1{letter-spacing:-.035em}
 .lab{font:13px/1.4 var(--fm);color:var(--mute)}
 .wrap{max-width:1440px;margin:0 auto;width:100%}
@@ -515,6 +523,31 @@ button{font:inherit;color:inherit;cursor:pointer}
 .rows small.s{display:none}
 .mb{display:none}
 @media (hover:none),(max-width:900px){.dk{display:none}.mb{display:inline}}
+
+/* phone & tablet: menu */
+.mbtn{display:none;font:14px var(--fb);padding:0 14px}
+@media (max-width:900px){
+ .mbtn{display:inline-flex}
+ .hd.open .nav{display:flex;flex-direction:column;position:fixed;top:var(--hd);left:0;right:0;margin:0;padding:6px var(--g) 14px;background:var(--bg);border-bottom:1px solid var(--line);gap:0}
+ .hd.open .nav a{padding:14px 0;font-size:18px;color:var(--ink);border-bottom:1px solid var(--line);border-radius:0}
+ .hd.open .nav a:last-child{border-bottom:0}
+}
+/* phone only */
+@media (max-width:600px){
+ [data-pal]{display:none}
+ .hero{min-height:0}
+ .field{flex:none;min-height:0;height:clamp(150px,44vw,230px);max-height:none}
+ .grp{grid-template-columns:1fr;gap:6px}
+ .ent{grid-template-columns:1fr;gap:2px;padding:10px 0}
+ .ent .d{order:2}
+ .ent>div{order:1}
+ .ent>a,.ent>span:empty{order:3;justify-self:start}
+ .ent>span:empty{display:none}
+ .ph .sh{flex-direction:column;align-items:stretch}
+ .ph .ctl{flex-wrap:wrap}
+ .ph .ctl p{flex-basis:100%;margin:0 0 12px!important}
+ .ph .ctl #pg{margin-right:auto!important}
+}
 </style>
 </head>
 <body>
@@ -522,6 +555,7 @@ button{font:inherit;color:inherit;cursor:pointer}
   <a class="brand" href="#top">Michelle Yun</a>
   <nav class="nav" id="nav" aria-label="Sections"><a href="#work">Work</a><a href="#about">About</a><a href="#toolkit">Toolkit</a><a href="#photography">Photography</a><a href="#contact">Contact</a></nav>
   <div class="tools">
+    <button class="ib mbtn" type="button" id="mbtn" aria-expanded="false" aria-controls="nav">Menu</button>
     <button class="ib" type="button" data-pal aria-label="Search and jump"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="kh">⌘K</span></button>
     <button class="ib" type="button" id="tbtn" aria-label="Switch light or dark theme"><svg width="14" height="14" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button>
   </div>
@@ -893,6 +927,8 @@ else{introDone=true;HOOK.go&&HOOK.go()}
 onS();HOOK.init&&HOOK.init();route();
 
 }
+
+{const hd=document.getElementById('hd'),mb=document.getElementById('mbtn');if(mb){mb.addEventListener('click',()=>{const o=hd.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.textContent=o?'Close':'Menu'});document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>{hd.classList.remove('open');mb.setAttribute('aria-expanded','false');mb.textContent='Menu'}))}}
 </script>
 </body>
 </html>
