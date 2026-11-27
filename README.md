@@ -1,2 +1,2 @@
-Michelle Yun portfolio
-Style: Halftone
+michelle yun portfolio
+style: Halftone
