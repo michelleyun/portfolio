@@ -1,0 +1,40 @@
+/* Halftone design tokens
+   The site's colors, type and shape, in one place.
+   Light and dark values switch automatically with the visitor's system setting. */
+
+:root {
+  color-scheme: light dark;
+
+  /* Ink and paper */
+  --bg:   light-dark(#ffffff, #0b0b0b);  /* page */
+  --ink:  light-dark(#0b0b0b, #efefef);  /* text, rules, dots */
+  --mute: light-dark(#6b6b6b, #8f8f8f);  /* secondary text */
+  --line: light-dark(#e1e1e1, #262626);  /* hairlines, button borders */
+  --surf: light-dark(#f3f3f3, #131313);  /* Work section, cards, clock */
+
+  /* Case study colors: one dusty mid-tone per case, always with black text */
+  --case-01: #9fc2ee;  /* blue      · Go-to-market */
+  --case-02: #f3b9a1;  /* peach     · Product strategy */
+  --case-03: #a9d6bf;  /* sage      · Program management */
+  --case-04: #c7b6f0;  /* lavender  · AI prototyping */
+  --case-05: #f0d98a;  /* butter    · Consumer insights */
+  --case-06: #efb3c6;  /* rose      · Competitive strategy */
+  --on-case: #0b0b0b;
+
+  /* Type */
+  --font-name:    'Syne', 'Arial Black', sans-serif;        /* only inside the dotted name */
+  --font-display: 'Inter Tight', system-ui, sans-serif;     /* headings, lead text */
+  --font-body:    'IBM Plex Sans', system-ui, sans-serif;   /* reading text, buttons, nav */
+  --font-mono:    'IBM Plex Mono', ui-monospace, monospace; /* tags, labels, numbers */
+
+  /* Shape and layout */
+  --radius-pill: 999px;           /* every button, tag and nav link */
+  --gutter: max(4vw, 16px);       /* page side margin */
+  --header: 60px;                 /* fixed header height */
+  --max-width: 1440px;
+  --section-pad: clamp(40px, 6.5vh, 68px);
+  --case-section-gap: 56px;       /* between Context, Approach, Solution, Impact */
+
+  /* Motion */
+  --ease: cubic-bezier(.7, 0, .2, 1);
+}
