@@ -23,9 +23,9 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--font-bo
 .cover p+p{margin-top:14px;font:16px/1.55 var(--font-body);color:var(--mute)}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-.sw{border-radius:20px;padding:22px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between}
+.sw{border-radius:20px;padding:22px;min-height:200px;display:grid;grid-template-rows:1fr auto auto;gap:4px}
 .sw b{font:600 26px/1.05 var(--font-display);letter-spacing:-.03em}
-.sw small{display:block;font:13px/1.5 var(--font-body)}
+.sw small{display:block;font:13px/1.5 var(--font-body);min-height:3em}
 .sw .lab{color:inherit;opacity:.75}
 .cc{border-radius:16px;min-height:170px;padding:16px;color:#0b0b0b;display:flex;flex-direction:column;justify-content:space-between}
 .cc b{font:600 18px/1.1 var(--font-display);letter-spacing:-.02em}
@@ -36,7 +36,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--font-bo
 .t1{font:600 64px/1 var(--font-display);letter-spacing:-.035em}
 .t2{font:600 40px/1.05 var(--font-display);letter-spacing:-.03em}
 .t3{font:500 26px/1.25 var(--font-display);letter-spacing:-.02em}
-.t4{font:16px/1.6 var(--font-body);max-width:62ch}
+.t4{font:16px/1.6 var(--font-body)}.t4 span{display:block;max-width:62ch}
 .t5{font:13px/1.4 var(--font-mono);color:var(--mute)}
 .name-s{font:700 64px/1 var(--font-name);letter-spacing:-.02em}
 .comp{display:grid;grid-template-columns:1.5fr 1.2fr .8fr;gap:24px}
@@ -77,9 +77,9 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--font-bo
   </div>
   <div class="lab">01 · Three surfaces</div>
   <div class="grid3">
-    <div class="sw" style="background:#fff;border:1px solid var(--line)"><span class="lab">Paper · #ffffff</span><div><b>Where reading happens</b><small>Hero, About, Toolkit, Photography, Contact, and every case study.</small></div></div>
-    <div class="sw" style="background:#f3f3f3"><span class="lab">Surface · #f3f3f3</span><div><b>Where work is browsed</b><small>The Work section, the clock, cards and boxed visuals.</small></div></div>
-    <div class="sw" style="background:#0b0b0b;color:#efefef"><span class="lab">Ink · #0b0b0b</span><div><b>Text, rules and dots</b><small>Flips to light ink on #0b0b0b paper in dark mode.</small></div></div>
+    <div class="sw" style="background:#fff;border:1px solid var(--line)"><span class="lab">Paper · #ffffff</span><b>Where reading happens</b><small>Hero, About, Toolkit, Photography, Contact, and every case study.</small></div>
+    <div class="sw" style="background:#f3f3f3"><span class="lab">Surface · #f3f3f3</span><b>Where work is browsed</b><small>The Work section, the clock, cards and boxed visuals.</small></div>
+    <div class="sw" style="background:#0b0b0b;color:#efefef"><span class="lab">Ink · #0b0b0b</span><b>Text, rules and dots</b><small>Flips to light ink on #0b0b0b paper in dark mode.</small></div>
   </div>
 </section>
 
@@ -112,7 +112,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--font-bo
     <div class="t5">Inter Tight 600<br>hero line · 50px</div><div class="t1">Clear plans, measurable outcomes.</div>
     <div class="t5">Inter Tight 600<br>section · 44px</div><div class="t2">Selected work</div>
     <div class="t5">Inter Tight 500<br>lead · 26px</div><div class="t3">Seven years across audience research, data analytics, and solutions engineering.</div>
-    <div class="t5">IBM Plex Sans 400<br>body · 16 / 1.6</div><div class="t4">I brought the three connected workstreams into a single roadmap, making phases, milestones, and dependencies visible across the program so potential risks and blockers could be identified early.</div>
+    <div class="t5">IBM Plex Sans 400<br>body · 16 / 1.6</div><div class="t4"><span>I brought the three connected workstreams into a single roadmap, making phases, milestones, and dependencies visible across the program so potential risks and blockers could be identified early.</span></div>
     <div class="t5">IBM Plex Mono 400<br>labels · 12–13px</div><div class="t5" style="font-size:13px;color:var(--ink)">01 / 06 · Program management · Jun 2025 – Present</div>
   </div>
   <div class="lab">Sentence case everywhere. Tight negative tracking on display sizes, none on body text.</div>
@@ -130,8 +130,8 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--font-bo
       <div class="row"><span class="tag" style="background:var(--case-04)">AI prototyping</span><span class="tag" style="background:var(--case-05)">Consumer insights</span><span class="tag" style="background:var(--case-06)">Competitive strategy</span></div>
     </div>
     <div class="box"><div class="lab">Halftone photo</div>
-      <canvas class="ht" id="dots" style="max-width:140px" aria-hidden="true"></canvas>
-      <div class="lab" style="margin-top:-6px">Printed in dots, fades to full color on hover.</div>
+      <canvas class="ht" id="dots" style="max-width:180px;aspect-ratio:2/3" aria-hidden="true"></canvas>
+      <div class="lab" style="margin-top:-6px">KJ, printed in dots. On the site, photos fade to full color on hover.</div>
     </div>
   </div>
   <div class="story"><div><b>Challenge</b>The problem, in one sentence.</div><div><b>What I did</b>The work, in one sentence.</div><div><b>Outcome</b>The result, in one sentence.</div></div>
@@ -164,9 +164,10 @@ function dotsFromText(cv,text,font,step){const r=cv.getBoundingClientRect(),W=Ma
  const o=document.createElement('canvas');o.width=W;o.height=H;const x=o.getContext('2d');x.font=`700 100px ${font}`;const lines=text.split('\n');const wm=Math.max(...lines.map(l=>x.measureText(l).width));const fs=Math.min(W*.98/wm*100,H/lines.length/.95);x.font=`700 ${fs}px ${font}`;lines.forEach((l,i)=>x.fillText(l,0,fs*.8+i*fs*.9));
  const d=x.getImageData(0,0,W,H).data;c.fillStyle='#0b0b0b';
  for(let j=0,y=step/2;y<H;j++,y+=step*.866)for(let X=step/2+(j%2?step/2:0);X<W;X+=step){let a=0,n=0;for(const q of[-1,0,1])for(const p of[-1,0,1]){const xx=Math.round(X+p*step/3),yy=Math.round(y+q*step/3);if(xx>=0&&yy>=0&&xx<W&&yy<H){a+=d[(yy*W+xx)*4+3]/255;n++}}a/=n;if(a<.03)continue;c.beginPath();c.arc(X,y,Math.sqrt(a)*step*.55,0,7);c.fill()}}
-function dotsGradient(cv,step){const r=cv.getBoundingClientRect(),W=Math.round(r.width),dpr=2;cv.width=W*dpr;cv.height=W*dpr;const c=cv.getContext('2d');c.scale(dpr,dpr);c.fillStyle='#0b0b0b';
- for(let j=0,y=step/2;y<W;j++,y+=step*.866)for(let X=step/2+(j%2?step/2:0);X<W;X+=step){const dx=X-W*.62,dy=y-W*.4,v=Math.max(0,1-Math.hypot(dx,dy)/(W*.75));c.beginPath();c.arc(X,y,Math.sqrt(1-v)*step*.55,0,7);c.fill()}}
-(document.fonts?document.fonts.load('700 100px Syne'):Promise.resolve()).then(()=>{dotsFromText(document.getElementById('name'),'Michelle\nYun',"Syne,'Arial Black',sans-serif",9);dotsGradient(document.getElementById('dots'),9)});
+function dotsPhoto(cv,src,step){const img=new Image();img.onload=()=>{const r=cv.getBoundingClientRect(),W=Math.round(r.width),H=Math.round(r.height),dpr=2;cv.width=W*dpr;cv.height=H*dpr;const c=cv.getContext('2d');c.scale(dpr,dpr);
+ const o=document.createElement('canvas');o.width=W;o.height=H;const x=o.getContext('2d');const s=Math.max(W/img.width,H/img.height);x.drawImage(img,(W-img.width*s)/2,(H-img.height*s)/2,img.width*s,img.height*s);const d=x.getImageData(0,0,W,H).data;c.fillStyle='#0b0b0b';
+ for(let j=0,y=step/2;y<H;j++,y+=step*.866)for(let X=step/2+(j%2?step/2:0);X<W;X+=step){const i=(Math.min(H-1,Math.round(y))*W+Math.min(W-1,Math.round(X)))*4,l=(d[i]*.3+d[i+1]*.59+d[i+2]*.11)/255;const rr=Math.sqrt(1-l)*step*.58;if(rr<.3)continue;c.beginPath();c.arc(X,y,rr,0,7);c.fill()}};img.src=src}
+(document.fonts?document.fonts.load('700 100px Syne'):Promise.resolve()).then(()=>{dotsFromText(document.getElementById('name'),'Michelle\nYun',"Syne,'Arial Black',sans-serif",9);dotsPhoto(document.getElementById('dots'),'../assets/photos/03-kj-chicago-suburbs.jpg',5)});
 </script>
 </body>
 </html>
