@@ -4,8 +4,7 @@ The colors, type, components and principles behind [michelleyun.github.io/portfo
 
 **The idea:** a halftone proof. The name, the photos and one artwork at a time are printed in dots. Everything else is quiet type, in black ink on white paper.
 
-- [Live board](https://michelleyun.github.io/portfolio/design-system/): the same board as a web page, in the real fonts
-- [tokens.css](tokens.css): every color, font and spacing value in one file
+[tokens.css](tokens.css) has every color, font and spacing value in one file.
 
 ![Overview: the dotted name and three surfaces](board/01-overview.png)
 
