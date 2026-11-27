@@ -35,6 +35,12 @@ Seven years of experience across audience research, data analytics, and solution
 
 Portraits of some very good dogs, shot around Chicago. [See them on the site →](https://michelleyun.github.io/portfolio/#photography)
 
+## Design system
+
+The colors, type and components behind the site. [See the design system →](design-system/)
+
+[![Design system overview](design-system/board/01-overview.png)](design-system/)
+
 ## About this repository
 
 This repository powers my [portfolio site](https://michelleyun.github.io/portfolio/), published with GitHub Pages.
